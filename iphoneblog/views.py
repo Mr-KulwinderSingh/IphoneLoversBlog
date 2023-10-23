@@ -80,7 +80,14 @@ class PostLike(View):
 
 
 def about(request):
-        """
-        Render the about page
-        """
-        return render(request, "about.html")
+    """
+    Render the about page
+    """
+    return render(request, "about.html")
+
+
+def all_models(request):
+    """
+    Render the all models page
+    """
+    return render(request, "all_models.html")

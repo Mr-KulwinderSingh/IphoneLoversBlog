@@ -40,6 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About Us</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'all_models' %}">3G to ProMax</a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -54,7 +57,7 @@
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
-                    The iPhone Journey | Since the Evolution
+                    The iPhone Journey | Since the Evolution!
                 </span>
             </div>
         </div>
