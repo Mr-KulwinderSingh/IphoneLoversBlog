@@ -1,291 +1,77 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<!-- Food section -->
-<section id="all_models" class="bg-body-tertiary p-3 text-dark bg-opacity-10">
-    <div class="container introduction pb-4">
-        <div class="row d-flex justify-content-center">
-            <h2 class="text-center"> iPhone 3G to iPhone 15 Promax </h2>
-            <div class="text-center">
-                <img src="{% static 'images/' %}" alt="line decoraction">
-            </div>
-            <div class="col-md-15 mt-3">
-                <h1 class=" text-right"></h1>
-                <h4 class="text-right">All the IPhone models and their technical specifications along the years of manufactured and came to the market.</h4>
+<!-- All Blog enteries -->
+<section id="3gtoproMax">
+    <h2 class="text-center mt-5">Welcome to the All iPhones Page</h2>
+    <p class="text-center"> <mark>"iPhoneLovers"</mark>A site gives you loving tech feeling! An iPhone<br>Have a look at the top model of the iPhone Or the one you like.</p>
+    <div class="text-center">
+    </div>
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for post in post_list %}
+                    <div class="col-lg-4 mb-5">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <a href="{% url 'post_detail' post.slug %}" class="post-link"
+                                    aria-label="Go to the post detail page">
+                                    <div class="image-container">
+                                        <!-- The featured image URL or an alternative if one isnt provided -->
+                                        {% if "placeholder" in post.featured_image.url %}
+                                        <img class="card-img" src="{% static 'images/.jpg' %}"
+                                            width="100%">
+                                        {% else %}
+                                        <img src=" {{ post.featured_image.url }}" class="card-img-top"
+                                            alt="{{ post.title }} image">
+                                        {% endif %}
+                                        <div class="card-img-overlay text-center">
+                                            {% for des in post.destinations.all %}
+                                            <h4 class="des-heading">{{ des }}</h4>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <h3 class="card-title mt-2 text-center">{{ post.title }}</h3>
+                                </a>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-center"><strong>Launch Year: </strong> <span>{{post.best_time }}</span></li>
+                                    <li class="list-group-item text-center"><strong>Modem Name: </strong> <span> {{post.ideal_duration }}</span></li>
+                                </ul>
+                                <hr>
+                                <div class="card-text">
+                                    {{ post.content | slice:":250" | safe }}...
+                                </div>
+                                <div class="card-footer">
+                                    <span>Author: {{ post.author }} | </span>
+                                    <span>{{ post.created_on}} | </span>
+                                    <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                                    <span class="text-secondary"> | <i class="far fa-comments"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link my-3">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link my-3"> NEXT &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif%}
     </div>
-    <br>
-    <div class="container">
-        <div class="row d-flex justify-content-left">
-            <div class=" col-md-3">
-                <img src="{% static 'images/IPhone1,1.png' %}" alt="IPhone1">
-            </div>
-            <div class="col-md-9">
-                <h3 class="text-left"> iPhone 1st Generation</h3>
-                <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-            </div>
-            <div class="row mt-3">
-            <div class="row d-flex justify-content-left">
-                <div class=" col-md-3">
-                    <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                </div>
-                <div class="col-md-9">
-                    <h3 class="text-left"> iPhone 1st Generation</h3>
-                    <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="row d-flex justify-content-left">
-                    <div class=" col-md-3">
-                        <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                    </div>
-                    <div class="col-md-9">
-                        <h3 class="text-left"> iPhone 1st Generation</h3>
-                        <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="row d-flex justify-content-left">
-                        <div class=" col-md-3">
-                            <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                        </div>
-                        <div class="col-md-9">
-                            <h3 class="text-left"> iPhone 1st Generation</h3>
-                            <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="row d-flex justify-content-left">
-                            <div class=" col-md-3">
-                                <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                            </div>
-                            <div class="col-md-9">
-                                <h3 class="text-left"> iPhone 1st Generation</h3>
-                                <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="row d-flex justify-content-left">
-                                <div class=" col-md-3">
-                                    <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                </div>
-                                <div class="col-md-9">
-                                    <h3 class="text-left"> iPhone 1st Generation</h3>
-                                    <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="row d-flex justify-content-left">
-                                    <div class=" col-md-3">
-                                        <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h3 class="text-left"> iPhone 1st Generation</h3>
-                                        <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="row d-flex justify-content-left">
-                                        <div class=" col-md-3">
-                                            <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <h3 class="text-left"> iPhone 1st Generation</h3>
-                                            <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="row d-flex justify-content-left">
-                                            <div class=" col-md-3">
-                                                <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                            </div>
-                                            <div class="col-md-9">
-                                                <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="row d-flex justify-content-left">
-                                                <div class=" col-md-3">
-                                                    <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                    <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-3">
-                                                <div class="row d-flex justify-content-left">
-                                                    <div class=" col-md-3">
-                                                        <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                        <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-3">
-                                                    <div class="row d-flex justify-content-left">
-                                                        <div class=" col-md-3">
-                                                            <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                            <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mt-3">
-                                                        <div class="row d-flex justify-content-left">
-                                                            <div class=" col-md-3">
-                                                                <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                            </div>
-                                                            <div class="col-md-9">
-                                                                <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mt-3">
-                                                            <div class="row d-flex justify-content-left">
-                                                                <div class=" col-md-3">
-                                                                    <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                                </div>
-                                                                <div class="col-md-9">
-                                                                    <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                    <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row mt-3">
-                                                                <div class="row d-flex justify-content-left">
-                                                                    <div class=" col-md-3">
-                                                                        <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                                    </div>
-                                                                    <div class="col-md-9">
-                                                                        <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                        <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mt-3">
-                                                                    <div class="row d-flex justify-content-left">
-                                                                        <div class=" col-md-3">
-                                                                            <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                                        </div>
-                                                                        <div class="col-md-9">
-                                                                            <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                            <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row mt-3">
-                                                                        <div class="row d-flex justify-content-left">
-                                                                            <div class=" col-md-3">
-                                                                                <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                                            </div>
-                                                                            <div class="col-md-9">
-                                                                                <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                                <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row mt-3">
-                                                                            <div class="row d-flex justify-content-left">
-                                                                                <div class=" col-md-3">
-                                                                                    <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                                                </div>
-                                                                                <div class="col-md-9">
-                                                                                    <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                                    <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="row mt-3">
-                                                                                <div class="row d-flex justify-content-left">
-                                                                                    <div class=" col-md-3">
-                                                                                        <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                                                    </div>
-                                                                                    <div class="col-md-9">
-                                                                                        <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                                        <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row mt-3">
-                                                                                    <div class="row d-flex justify-content-left">
-                                                                                        <div class=" col-md-3">
-                                                                                            <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                                                        </div>
-                                                                                        <div class="col-md-9">
-                                                                                            <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                                            <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="row mt-3">
-                                                                                        <div class="row d-flex justify-content-left">
-                                                                                            <div class=" col-md-3">
-                                                                                                <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                                                                                            </div>
-                                                                                            <div class="col-md-9">
-                                                                                                <h3 class="text-left"> iPhone 1st Generation</h3>
-                                                                                                <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                         <div class="row mt-3">
-            <div class="row d-flex justify-content-left">
-                <div class=" col-md-3">
-                    <img src="{% static 'images/IPhone_5.png' %}" alt="IPhone1">
-                </div>
-                <div class="col-md-9">
-                    <h3 class="text-left"> iPhone 1st Generation</h3>
-                    <p>This is first ever made iPhone by Apple called Iphone (1st Generation) Developed in 2007</p>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="row d-flex justify-content-left">
-                    <div class=" col-md-3">
-                        <img src="{% static 'images/IPhone3G.png' %}" alt="IPhone3G">
-                    </div>
-                    <div class="col-md-9">
-                        <h3 class="text-left"> iPhone 3G (2nd iPhone)</h3>
-                        <p>The 2nd time launched iphone model was identical to the first iPhone made by apple and making
-                            their stable place in the phone market by Apple</p>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="row d-flex justify-content-left">
-                        <div class=" col-md-3">
-                            <img src="{% static 'images/IPhone3GS.png' %}" alt="IPhone3GS">
-                        </div>
-                        <div class="col-md-9">
-                            <h3 class="text-left"> iPhone 3GS</h3>
-                            <p>A unique and Attractive design launched by apple a new iphone model by apple was iphone 4
-                            </p>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="row d-flex justify-content-left">
-                                <div class=" col-md-3">
-                                    <img src="{% static 'images/IPhone4.png' %}" alt="IPhone4">
-                                </div>
-                                <div class="col-md-9">
-                                    <h3 class="text-left">iPhone 4 </h3>
-                                    <p>Keeping the same standard but high in the specification the new but same looking
-                                        model launched by apple was iPhone 4S</p>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="row d-flex justify-content-left">
-                                        <div class=" col-md-3">
-                                            <img src="{% static 'images/IPhone4S.png' %}" alt="IPhone4S">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <h3 class="text-left"> iPhone 4S </h3>
-                                            <p>add content</p>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="row d-flex justify-content-left">
-                                                <div class=" col-md-3">
-                                                    <img src="{% static 'images/300px-IPhone_5.png' %}" alt="IPhone_5">
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <h3 class="text-left"> iPhone 5 </h3>
-                                                    <p>add content</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
 </section>
-{% endblock %}
+{% endblock content %}

@@ -88,6 +88,6 @@ def about(request):
 
 def all_models(request):
     """
-    Render the all models page
+    Render the food page
     """
     return render(request, "all_models.html")

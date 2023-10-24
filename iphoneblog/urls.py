@@ -8,5 +8,4 @@ urlpatterns = [
     path('all_models', views.all_models, name="all_models"),
     path('<slug:slug>', views.PostDetail.as_view(), name="post_detail"),
     path('like/<slug:slug>', views.PostLike.as_view(), name="post_like"),
-    
 ]
