@@ -9,6 +9,10 @@ body {
     color: #4A4A4F;
 }
 
+.home-pg {
+    background-color: #acf9f9;
+}
+
 .red-o {
     color: #E84610;
 }
@@ -139,4 +143,12 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+
+.signupdiv,
+.login-cont {
+    background-color: #a8f8f8;
+    height: auto;
+    box-shadow: 20px 20px 50px 10px #f0eccd inset;
 }

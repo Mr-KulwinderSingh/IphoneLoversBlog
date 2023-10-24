@@ -8,19 +8,19 @@
         <div class="row">
             <div class="col-12 mt-3 left">
                 <div class="row">
-                    {% for destination in destinations_list %}
+                    {% for post in post_list %}
                     <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark">
-                            <a href="{% url 'destinations-post' destination.title %}"
-                                aria-label="Go to the destinations post page">
+                            <a href="{% url 'post.title' %}"
+                                aria-label="Go to the AlliPhones post page">
                                 <div class="card-header">
-                                    <h2>{{ destination.title}}</h2>
+                                    <h2>{{ post.title}}</h2>
                                 </div>
-                                <img src="{{ destination.destination_image.url }}" class="card-img"
-                                    alt=" {{ destination.title }} Image">
+                                <img src="{{ post.post_image.url }}" class="card-img"
+                                    alt=" {{ post.title }} Image">
                             </a>
                             <div class="card-footer text-muted">
-                                {{ destination.excerpt }}
+                                {{ post.excerpt }}
                             </div>
                         </div>
                     </div>
