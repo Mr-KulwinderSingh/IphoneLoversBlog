@@ -1,8 +1,12 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
+from .forms import AddPostForm
 from .forms import CommentForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PostList(generic.ListView):
@@ -77,6 +81,31 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    """
+    When user is logged in allow the user to add blog post
+
+    """
+
+    model = Post
+    form_class = AddPostForm
+    template_name = "add_post.html"
+    success_message = "A new post has been added by you, please wait for approval"
+
+    def get_success_url(self):
+        """
+        The reverse url for the successful addition of the post by user
+        to the database
+        """
+
+        return reverse("user-page")
+
+    def form_invalid(self, form):
+        form.instance.author = self.request.user
+        form.slug = slug_field(form.instance.title)
+        return super().form_valid(form)
 
 
 def about(request):

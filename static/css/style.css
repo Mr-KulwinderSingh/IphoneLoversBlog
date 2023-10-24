@@ -150,5 +150,10 @@ body {
 .login-cont {
     background-color: #a8f8f8;
     height: auto;
-    box-shadow: 20px 20px 50px 10px #f0eccd inset;
+    box-shadow: 15px 15px 15px 15px #eef3aa inset;
+}
+
+.main-col,
+#about {
+    background-color: #b4f8fa;
 }
