@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Alliphones section -->
+<section id="alliphones" class="content-iphone">
+    <h2 class="text-center my-3">AlliPhones</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for destination in destinations_list %}
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100 text-center text-dark">
+                            <a href="{% url 'destinations-post' destination.title %}"
+                                aria-label="Go to the destinations post page">
+                                <div class="card-header">
+                                    <h2>{{ destination.title}}</h2>
+                                </div>
+                                <img src="{{ destination.destination_image.url }}" class="card-img"
+                                    alt=" {{ destination.title }} Image">
+                            </a>
+                            <div class="card-footer text-muted">
+                                {{ destination.excerpt }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
