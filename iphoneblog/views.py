@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
-from .forms import AddPostForm
+from .forms import AddPostForm, UpdatePostForm
 from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -104,8 +105,40 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.slug = slug_field(form.instance.title)
+        form.title = slugify(form.instance.title)
         return super().form_valid(form)
+
+
+@login_required()
+def update_post(request, slug):
+    """
+    User can update the post he had created
+    """
+    post = get_object_or_404(Post, slug=slug)
+    if request.user.id == post.author.id:
+        if request.method == "POST":
+            form = UpdatePostForm(request.POST, request.FILES, instance=post)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.slug = slugify(post.title)
+                post.status = 1
+                form.save()
+                messages.success(request, "Your post has been updated successfully")
+                return redirect(reverse("user-post-list"))
+            else:
+                messages.error(request, "Failed to update the post")
+        else:
+            form = UpdatePostForm(instance=post)
+    else:
+        messages.error(request, "Sorry this is not your post")
+
+    template = ('update_post.html',)
+    context = {"form": form, "post": post}
+    return render(request, template, context)
+ 
+
+
 
 
 def about(request):
