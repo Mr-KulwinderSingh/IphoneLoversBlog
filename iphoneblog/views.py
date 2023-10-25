@@ -1,13 +1,13 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import AddPostForm, UpdatePostForm
 from .forms import CommentForm
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PostList(generic.ListView):
@@ -93,7 +93,7 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Post
     form_class = AddPostForm
     template_name = "add_post.html"
-    success_message = "A new post has been added by you, please wait for approval"
+    success_message = "You added a post, please wait for approval"
 
     def get_success_url(self):
         """
@@ -124,7 +124,8 @@ def update_post(request, slug):
                 post.slug = slugify(post.title)
                 post.status = 1
                 form.save()
-                messages.success(request, "Your post has been updated successfully")
+                messages.success(
+                    request, "Your post has been updated successfully")
                 return redirect(reverse("user-post-list"))
             else:
                 messages.error(request, "Failed to update the post")
@@ -138,7 +139,24 @@ def update_post(request, slug):
     return render(request, template, context)
  
 
+class DeletePost(generic, DeleteView):
+    """
+    Class that will allow user to delete a post that he posted
+    """
+    model = Post
+    template_name = "delete_post.html"
+    success_message = "Post has been deleted successfully"
 
+    def delete(self, request, *args, **kwargs):
+        messages.warning(self.request, self.success_message)
+        return super(DeletePost, self).delete(request, *args, **kwargs)
+
+    def get_success_url(self):
+        """
+        To set the reverse url for the
+        successfull deletion of the post
+        """
+        return reverse("user-post-list")
 
 
 def about(request):
