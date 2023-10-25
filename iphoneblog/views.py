@@ -109,6 +109,20 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
+class UserPostList(LoginRequiredMixin, generic.ListView):
+    """
+    Any user can have a look all of their posts
+    """
+    model = Post
+    author = Post.author
+    template_name = "user_post_list.html"
+
+    def get_queryset(self, *args, **kwargs):
+        return Post.objects.filter(
+            author=self.request.user, status=1).order_by(
+            "-created_on")
+    
+
 @login_required()
 def update_post(request, slug):
     """
@@ -139,7 +153,7 @@ def update_post(request, slug):
     return render(request, template, context)
  
 
-class DeletePost(generic, DeleteView):
+class DeletePost(DeleteView):
     """
     Class that will allow user to delete a post that he posted
     """
