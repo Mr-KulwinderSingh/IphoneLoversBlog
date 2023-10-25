@@ -34,8 +34,7 @@ body {
 }
 
 .card {
-    border: none;
-    background-color: transparent;
+    border-radius: 15px;
 }
 
 .image-container {
@@ -63,6 +62,7 @@ body {
     display: inline-block;
     height: 33vh;
     width: 100%;
+    
 }
 
 .masthead-text {
@@ -74,6 +74,7 @@ body {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    
 }
 
 .masthead-image:after {
@@ -136,6 +137,7 @@ body {
     color: #E84610;
     border: none;
     background: transparent;
+    
 }
 
 .btn-like:hover,
@@ -150,10 +152,18 @@ body {
 .login-cont {
     background-color: #a8f8f8;
     height: auto;
-    box-shadow: 15px 15px 15px 15px #eef3aa inset;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgb(95, 61, 244);
 }
 
 .main-col,
 #about {
     background-color: #b4f8fa;
 }
+
+/*----------Add post----------*/
+
+.pg-col { 
+    background-color: #b4f8fa;
+}
+

@@ -102,7 +102,7 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
         return reverse("user-page")
 
-    def form_invalid(self, form):
+    def form_valid(self, form):
         form.instance.author = self.request.user
         form.slug = slug_field(form.instance.title)
         return super().form_valid(form)
@@ -120,3 +120,12 @@ def all_models(request):
     Render the food page
     """
     return render(request, "all_models.html")
+
+
+class User(LoginRequiredMixin, generic.ListView):
+    """
+    This will render the user page
+    """
+
+    model = Post
+    template_name = "user_page.html"
