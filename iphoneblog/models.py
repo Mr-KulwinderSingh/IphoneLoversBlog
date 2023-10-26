@@ -8,6 +8,20 @@ from django.urls import reverse
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+class Author(models.Model):
+    """
+    Model for Author
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    created_on = models.DateTimeField(auto_now_add=True)
+    email = models.EmailField(default="", unique=True)
+    approved = models.BooleanField(default=False)
+    author_image = CloudinaryField("image", default="placeholder")
+
+    def __str__(self):
+        return self.user.username
+
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True, null=True)
     iPhone_type = models.TextField(blank=False)
