@@ -22,7 +22,7 @@ body {
 }
 
 .navbar {
-    background-color: #f4c18e;
+    background-color: #19d9ee;
 }
 
 .nav-link:hover {
@@ -33,7 +33,7 @@ body {
 .nav-item {
     border-radius: 5px;
     background-color: #4A4A4F;
-    color: rgb(0, 0, 0);
+
 }
 .navbar-text {
     color: rgb(0, 0, 0);
@@ -53,9 +53,14 @@ body {
     color: #4A4A4F;
 }
 
-.home-pg {
-    background-color: #acf9f9;
+.home-pg,
+#hero-section,
+#post-description,
+.threegtopromax {
+    background-color: #b4f8fa;
 }
+
+
 
 .red-o {
     color: #E84610;
@@ -206,6 +211,8 @@ body {
 }
 
 
+/* --------About Page _------------*/
+
 .main-col,
 #about {
     background-color: #b4f8fa;
@@ -233,7 +240,7 @@ body {
 
 
 footer {
-    background-color:#f4c18e ;
+    background-color:#19d9ee ;
     color: rgb(0, 0, 0);
 }
 

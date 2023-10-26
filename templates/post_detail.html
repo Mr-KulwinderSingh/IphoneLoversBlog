@@ -1,7 +1,8 @@
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
 {% load crispy_forms_tags %}
-
+<section id="post-description">
 <div class="">
     <div class="container">
         <div class="row g-0">
@@ -116,11 +117,5 @@
         </div>
     </div>
 </div>
-<footer class="footer mt-auto py-3 dark-bg">
-    <p class="m-0 text-center text-white">For Education Purpose Only</p>
-    <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-        <i class="fab fa-twitter-square ms-3"></i>
-        <i class="fab fa-instagram-square ms-3"></i>
-        <i class="fab fa-youtube-square ms-3"></i></p>
-</footer>
+</section>
 {% endblock content %}
