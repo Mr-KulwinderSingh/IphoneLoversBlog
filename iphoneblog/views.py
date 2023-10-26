@@ -8,6 +8,7 @@ from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import AddPostForm, UpdatePostForm
 from .forms import CommentForm
+from django.template.defaultfilters import slugify
 
 
 class PostList(generic.ListView):
@@ -86,26 +87,23 @@ class PostLike(View):
 
 class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
-    When user is logged in allow the user to add blog post
-
+    Add a blog post only when user is logged in
     """
-
     model = Post
     form_class = AddPostForm
     template_name = "add_post.html"
-    success_message = "You added a post, please wait for approval"
+    success_message = "You have added a new post, It's awaiting approval!"
 
     def get_success_url(self):
         """
-        The reverse url for the successful addition of the post by user
-        to the database
+        Set the reverse url for the successful addition
+        of the post to the database
         """
-
         return reverse("user-page")
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.title = slugify(form.instance.title)
+        form.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
 
