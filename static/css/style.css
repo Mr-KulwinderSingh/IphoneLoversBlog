@@ -259,3 +259,23 @@ footer a:hover {
     color: #b8ebeb;
     text-decoration: underline;
 }
+
+
+/*------------ Caraousal --------------*/
+
+.carousel-item img {
+    height: 72vh;
+}
+
+.carousel-item h3 span {
+    color: #f7e23f;
+}
+
+.carousel-item p {
+    font-size: 1.2rem;
+}
+
+.carousel-caption {
+    border-radius: 15px;
+    background-color: rgba(0, 12, 16, 0.549);
+}
