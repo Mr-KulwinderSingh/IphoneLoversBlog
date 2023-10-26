@@ -1,6 +1,50 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kay+Pho+Du&family=Roboto:wght@100&display=swap');
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
+    font-family: Kay Pho Du, sans-serif;
+    font-weight: 300;
     background-color: #79f4f6;
 }
+
+/* ------------------navebar-------------*/
+
+#logo img {
+    border-radius: 25px;
+}
+
+.navbar {
+    background-color: #f4c18e;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    transition: ease-in-out;
+}
+
+.nav-item {
+    border-radius: 5px;
+    background-color: #4A4A4F;
+    color: rgb(0, 0, 0);
+}
+.navbar-text {
+    color: rgb(0, 0, 0);
+}
+
+.a-tag {
+    margin-left: 15px;
+    color: rgb(0, 0, 0);
+}
+
+/* ------------------navebar-------------*/
 
 .brand {
     font-family: Lato, sans-serif;
@@ -184,4 +228,27 @@ body {
     width: 100%;
     height: 100%;
 
+}
+/*---------- Footer ---------*/
+
+
+footer {
+    background-color:#f4c18e ;
+    color: rgb(0, 0, 0);
+}
+
+footer p a {
+    color: rgb(4, 30, 134);
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+footer a {
+    color: rgb(4, 30, 134);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #b8ebeb;
+    text-decoration: underline;
 }
