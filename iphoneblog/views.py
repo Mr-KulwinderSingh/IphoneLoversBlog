@@ -19,6 +19,16 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
+class AllBlogPost(generic.ListView):
+    """
+    Render the blog page
+    """
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
+    template_name = "all_models.html"
+    paginate_by = 9
+
+
 class PostDetail(View):
 
     def get(self, request, slug, *argus, **kwargs):

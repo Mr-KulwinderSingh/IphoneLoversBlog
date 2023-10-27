@@ -8,6 +8,23 @@ from django.urls import reverse
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+class Smartphone(models.Model):
+    """
+    Model for smartphone place
+    """
+    title = models.CharField(max_length=100, blank=True)
+    smartphone_image = CloudinaryField("image", default="placeholder")
+    slug = models.SlugField(max_length=100, unique=True, default="", null=True)
+    excerpt = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = "Smartphone"
+        verbose_name_plural = "Smartphones"
+
+    def __str__(self):
+        return self.title
+
+
 class Author(models.Model):
     """
     Model for Author
@@ -35,7 +52,16 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     created_on = models.DateField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    likes = models.ManyToManyField(
+        User, related_name='blog_likes', blank=True)
+    comment_count = models.IntegerField(default=0)
+    best_feature = models.CharField(
+        max_length=150, verbose_name="Best feature of the smartphone"
+        )
+    battery_life = models.CharField(
+        max_length=200, verbose_name="Average battery life")
+    smartphones = models.ManyToManyField(Smartphone, blank=True)
+
 
     class Meta:
         ordering = ['-created_on']

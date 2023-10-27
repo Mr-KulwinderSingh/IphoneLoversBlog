@@ -27,7 +27,7 @@
                                             alt="{{ post.title }} image">
                                         {% endif %}
                                         <div class="card-img-overlay text-center">
-                                            {% for des in post.destinations.all %}
+                                            {% for post in posts.all %}
                                             <h4 class="des-heading">{{ des }}</h4>
                                             {% endfor %}
                                         </div>
