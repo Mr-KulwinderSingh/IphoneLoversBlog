@@ -15,7 +15,7 @@ from django.template.defaultfilters import slugify
 
 class Allsmartphone(generic.ListView):
     """
-    Render all the smartphones on home page 
+    Render all the smartphones on home page
     """
     model = Smartphone
     template_name = "index.html"
@@ -23,7 +23,7 @@ class Allsmartphone(generic.ListView):
 
 class AllBlogPost(generic.ListView):
     """
-    Render the blog page 
+    Render the blog page
     """
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -212,3 +212,26 @@ class User(LoginRequiredMixin, generic.ListView):
 
     model = Post
     template_name = "user_page.html"
+
+
+def smartphones_view(request, sma):
+    """
+    Render the posts for selected smartphones
+    """
+    smartphones_post = Post.objects.filter(
+        smartphones__title__contains=sma, status=1
+    )
+    return render(
+        request,
+        "smartphones_post.html",
+        {"sma": sma.title(), "smartphones_post": smartphones_post},
+    )
+
+
+def smartphones_list(request):
+    """Return a list of smartphones for the dropdown in the navbar"""
+    smartphones_list = Smartphone.objects.all()
+    context = {
+        "smartphones_list": smartphones_list,
+    }
+    return context

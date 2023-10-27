@@ -1,26 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<!-- Alliphones section -->
-<section id="alliphones" class="content-iphone">
+<!-- Smartphones section -->
+<section id="smartphones" class="content-smartphones">
     <h2 class="text-center my-3">AlliPhones</h2>
     <div class="container">
         <div class="row">
             <div class="col-12 mt-3 left">
                 <div class="row">
-                    {% for post in post_list %}
+                    {% for smartphone in smartphones_list %}
                     <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark">
-                            <a href="{% url 'post.title' %}"
-                                aria-label="Go to the AlliPhones post page">
+                            <a href="{% url 'smartphones-post' smartphone.title %}"
+                                aria-label="Go to the smartphones post page">
                                 <div class="card-header">
-                                    <h2>{{ post.title}}</h2>
+                                    <h2>{{ smartphone.title}}</h2>
                                 </div>
-                                <img src="{{ post.post_image.url }}" class="card-img"
-                                    alt=" {{ post.title }} Image">
+                                <img src="{{ smartphone.smartphone_image.url }}" class="card-img"
+                                    alt=" {{ smartphone.title }} Image">
                             </a>
                             <div class="card-footer text-muted">
-                                {{ post.excerpt }}
+                                {{ smartphone.excerpt }}
                             </div>
                         </div>
                     </div>

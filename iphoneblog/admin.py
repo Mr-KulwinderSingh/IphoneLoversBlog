@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Author
+from .models import Post, Smartphone, Comment, Author 
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -11,6 +11,16 @@ class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
     summernote_fields = ('content')
+
+
+@admin.register(Smartphone)
+class SmartphoneAdmin(admin.ModelAdmin):
+    """
+    Add fields for smartphone in admin panel
+    """
+
+    list_display = ("title", "slug", "excerpt")
+    search_fields = ["title"]
 
 
 @admin.register(Author)

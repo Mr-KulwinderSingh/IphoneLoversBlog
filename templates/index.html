@@ -46,57 +46,39 @@
         </button>
       </div>
 </section>
-<div class="container-fluid home-pg">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card-body">
-                        <div class="image-container">
-                    <div class="card" style="width: 18rem;">
-                        {% if "placeholder" in post.featured_image.url %}
-                        
-                        {% else %}
-                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="featured_image">
-                        <div class="card-body">
-                          <h4 class="card-title">{{ post.title }}</h5>
-                          <p class="card-text">One of the most selling iPhone in the iPhone series up to now.</p>
-                          <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Click for Details..</a>
-                          {% endif %}
-                        </div>
+<section class="bg-body-tertiary p-3 text-dark bg-opacity-10" id="destination">
+  <div class="container">
+      <div class="row d-flex flex-wrap">
+          <div class="col-md-12">
+              <h2 class="text-center mt-2"><span>All the iPhones as per their Generations</span></h2>
+              <h4 class="text-center mb-4">Go and have a look through the groups they are divided in and find your Favrouite</h4>
+          </div>
+      </div>
+  </div>
+  <div class=" container">
+      <div class="row">
+          <div class="col-12 mt-3 left">
+              <div class="row">
+                  {% for smartphone in smartphone_list %}
+                  <div class="col-lg-4 col-md-6 mb-5">
+                      <div class="card h-100 text-center text-dark">
+                          <a href="{% url 'smartphones-post' smartphone.title %}"
+                              aria-label="Go to the smartphone post page">
+                              <div class="card-header">
+                                  <h4>{{ smartphone.title}}</h4>
+                              </div>
+                              <img src="{{ smartphone.smartphone_image.url }}" class="card-img"
+                                  alt=" {{ smartphone.title }} Image">
+                          </a>
+                          <div class="card-footer text-muted">
+                              {{ smartphone.excerpt }}
+                          </div>
                       </div>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on }}
-                                <i class="far fa-heart"></i>{{ post.number_of_likes }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
-            </div>
-        </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
-
+                  </div>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 {% endblock %}

@@ -70,6 +70,24 @@
                             aria-label="Go to the user page"><i class="fa-solid fa-user"></i> {{ user.username }}</a>
                     </li>
                     {% endif %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" id="navbarDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">AlliPhones</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'home' %}#smartphones">Select your Favrouite</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            {% for smartphone in smartphones_list %}
+                            <li><a class="dropdown-item" href="{% url 'smartphones-post' smartphone.title %}"
+                                    aria-label="Go to the each smartphone page">{{ smartphone.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+             
+            </div>
+        </div>
                 </ul>
                 <span class="navbar-text text-muted a-tag">
                     The iPhone Journey | Since the Evolution!

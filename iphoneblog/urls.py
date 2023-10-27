@@ -21,5 +21,9 @@ urlpatterns = [
     path(
         'delete_post/<slug:slug>',
         views.DeletePost.as_view(), name="delete-post"),
-    
+    path(
+        "smartphones_post/<str:sma>",
+        views.smartphones_view,
+        name="smartphones-post",
+    ),
 ]
