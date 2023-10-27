@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- All Blog enteries -->
+<section id="blog-page">
+    <h2 class="text-center mt-5">Welcome to the Blog Page</h2>
+    <p class="text-center"> <mark>"iPhoneLovers"</mark>People who love iPhones<br>Have a look at the outstanding smartphones made by Apple.</p>
+    <div class="text-center">
+      <hr>
+    </div>
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for post in post_list %}
+                    <div class="col-lg-4 mb-5">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <a href="{% url 'post_detail' post.slug %}" class="post-link"
+                                    aria-label="Go to the post detail page">
+                                    <div class="image-container">
+                                        <!-- The featured image URL or an alternative if one isnt provided -->
+                                        {% if "placeholder" in post.featured_image.url %}
+                                        <img class="card-img" src="{% static 'images/' %}"
+                                            width="100%">
+                                        {% else %}
+                                        <img src=" {{ post.featured_image.url }}" class="card-img-top"
+                                            alt="{{ post.title }} image">
+                                        {% endif %}
+                                        <div class="card-img-overlay text-center">
+                                            {% for sma in post.smartphones.all %}
+                                            <h4 class="sma-heading">{{ sma }}</h4>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <h3 class="card-title mt-2 text-center">{{ post.title }}</h3>
+                                </a>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-center"><strong>Best Feature: </strong> <span>{{post.best_feature }}</span></li>
+                                    <li class="list-group-item text-center"><strong>Battery Life: </strong> <span> {{post.battery_life }}</span></li>
+                                </ul>
+                                <hr>
+                                <div class="card-text">
+                                    {{ post.content | slice:":250" | safe }}...
+                                </div>
+                                <div class="card-footer">
+                                    <span>Author: {{ post.author }} | </span>
+                                    <span>{{ post.created_on}} | </span>
+                                    <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                                    <span class="text-secondary"> | <i class="far fa-comments"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link my-3">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link my-3"> NEXT &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif%}
+    </div>
+</section>
+{% endblock content %}

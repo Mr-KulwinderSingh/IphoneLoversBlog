@@ -10,7 +10,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Smartphone(models.Model):
     """
-    Model for smartphone place
+    Model for smartphone
     """
     title = models.CharField(max_length=100, blank=True)
     smartphone_image = CloudinaryField("image", default="placeholder")

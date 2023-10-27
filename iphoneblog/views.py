@@ -5,6 +5,7 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from .models import *
 from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import AddPostForm, UpdatePostForm
@@ -12,21 +13,29 @@ from .forms import CommentForm
 from django.template.defaultfilters import slugify
 
 
+class Allsmartphone(generic.ListView):
+    """
+    Render all the smartphones on home page 
+    """
+    model = Smartphone
+    template_name = "index.html"
+
+
+class AllBlogPost(generic.ListView):
+    """
+    Render the blog page 
+    """
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
+    template_name = "blog.html"
+    paginate_by = 9
+
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
-
-
-class AllBlogPost(generic.ListView):
-    """
-    Render the blog page
-    """
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "all_models.html"
-    paginate_by = 9
 
 
 class PostDetail(View):
