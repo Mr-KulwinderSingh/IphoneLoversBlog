@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin

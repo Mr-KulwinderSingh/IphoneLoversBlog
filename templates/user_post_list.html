@@ -31,7 +31,7 @@
                                         <!-- The featured image URL or an alternative if one isnt provided -->
                                         {% if "placeholder" in post.featured_image.url %}
                                         <img class="card-img" src="{% static 'images/IPhone3GS.png' %}"
-                                            width="100%">
+                                            width="80%" alt="image-of-your-post" >
                                         {% else %}
                                         <img src=" {{ post.featured_image.url }}" class="card-img-top"
                                             alt="{{ post.title }} image">

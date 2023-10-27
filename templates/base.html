@@ -50,7 +50,7 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'account_logout' %}"
-                            aria-label="Go to the register page">Logout</a>
+                            aria-label="Go to the signup page">Logout</a>
                     </li>
                     {% else %}
 
@@ -102,7 +102,7 @@
             <div class="row py-3">
                 <div class="col-md-3 offset-md-0">
                     <a href="{% url 'home' %}">
-                        <h4>iPhone|Lovers</h4>
+                        <h3>iPhone|Lovers</h4>
                     </a>
                     <p class="footer-text ">We are bloggers and not working for Apple Inc. This website is for the people who love iPhones but not to promote iPhones
                     </p>
@@ -131,12 +131,13 @@
             messages.forEach(message => {
                 let alert = new bootstrap.Alert(message);
             });
-        setTimeout(function() {
-            let messages = document.getElementById("msg");
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 1500);
-    }
+            setTimeout(() => {
+                messages.forEach(message => {
+                    var alert = bootstrap.Alert.getInstance(message);
+                    alert.close();
+                });
+            }, 2000);
+        }
     </script>
 </body>
 

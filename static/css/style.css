@@ -202,15 +202,6 @@ body {
 }
 
 
-.signupdiv,
-.login-cont {
-    background-color: #a8f8f8;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 2px 2px 15px rgb(95, 61, 244);
-}
-
-
 /* --------About Page _------------*/
 
 .main-col,
@@ -261,7 +252,7 @@ footer a:hover {
 }
 
 
-/*------------ Caraousal --------------*/
+/*------------ home / Caraousal --------------*/
 
 .carousel-item img {
     height: 72vh;
@@ -278,4 +269,73 @@ footer a:hover {
 .carousel-caption {
     border-radius: 15px;
     background-color: rgba(0, 12, 16, 0.549);
+}
+
+
+/*-------------About Page ----------------*/
+#about .introduction {
+    border-bottom: thick double #fa0303;;
+}
+
+#about p,
+ul {
+    font-size: 1.2rem;
+}
+/* ------------------all_models--------------*/
+.introduction {
+    border-bottom: thick double #fa0303;;
+}
+
+/*---------------user ----------*/
+
+#user-page h2 span,
+#user-posts h2 span,
+#update-post h2 span,
+#add-post h2 span {
+    color: #a00505;
+}
+#post-description .post-comment {
+    box-shadow: 1px 1px 5px 3px rgb(195, 191, 191);
+}
+
+
+/*----------------Sign in, Sign up, Logout*--------*/
+
+.signupdiv,
+.login-cont {
+    background-color: #a8f8f8;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgb(95, 61, 244); */
+}
+#signup .container,
+#signin .container,
+#logout .container {
+    height: auto;
+    /* box-shadow: 20px 20px 50px 10px #f0eccd inset; */
+}
+
+#signup p,
+#signin p {
+    font-size: 1.2rem;
+}
+
+#logout p {
+    font-size: 1.4rem;
+}
+
+
+
+/* Media queries for different screen size*/
+
+@media screen and (min-width:485px) {
+    .carousel-item img {
+        height: 55vh;
+    }
+}
+
+@media screen and (min-width:950px) {
+    .carousel-item img {
+        height: 70vh;
+    }
 }
