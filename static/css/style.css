@@ -15,7 +15,7 @@ body {
     background-color: #79f4f6;
 }
 
-/* ------------------navebar-------------*/
+/*--------------------------------------------------------Nav bar buttons */
 
 #logo img {
     border-radius: 25px;
@@ -44,194 +44,35 @@ body {
     color: rgb(0, 0, 0);
 }
 
-/* ------------------navebar-------------*/
-
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
+/*------------------------------------------------------------Home page*/
+.carousel-item img {
+    height: 32vh;
 }
 
-.home-pg,
-#hero-section,
-#post-description,
-.threegtopromax {
-    background-color: #b4f8fa;
+.carousel-item h3 span {
+    color: #f7e23f;
 }
 
-
-
-.red-o {
-    color: #E84610;
+.carousel-item p {
+    font-size: 1.2rem;
 }
 
-.thin {
-    font-weight: 300;
+.carousel-caption {
+    background-color: rgba(0, 12, 16, 0.6);
 }
 
-.light-bg {
-    background-color: #fff;
+#destination h2 span {
+    color: #f70808;
 }
 
-.dark-bg {
-    background-color: #445261;
+#destination .card {
+    box-shadow: 1px 1px 5px 3px rgb(245, 196, 196);
 }
 
-.main-bg {
-    background-color: #F9FAFC;
-}
-
-.card {
-    border-radius: 15px;
-}
-
-.image-container {
-
-    position: relative;
-}
-.card img {
-    width: 100%;
-    height: 100%;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-    
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-    
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
-
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
-
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
-.btn-signup {
-    background-color: #23BBBB;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
-
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-    
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-
-
-/* --------About Page _------------*/
-
-.main-col,
-#about {
-    background-color: #b4f8fa;
-}
-
-.card-body {
-    background-color: ;
-}
-
-/*----------Add post----------*/
-
-.pg-col,
-#user-posts { 
-    background-color: #b4f8fa;
-}
-
-
-.card-img-top {
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-
-}
-/*---------- Footer ---------*/
-
+/*------------------------------------------------------------Footer*/
 
 footer {
-    background-color:#19d9ee ;
+    background-color: #19d9ee;
     color: rgb(0, 0, 0);
 }
 
@@ -251,28 +92,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
-/*------------ home / Caraousal --------------*/
-
-.carousel-item img {
-    height: 72vh;
-}
-
-.carousel-item h3 span {
-    color: #f7e23f;
-}
-
-.carousel-item p {
-    font-size: 1.2rem;
-}
-
-.carousel-caption {
-    border-radius: 15px;
-    background-color: rgba(0, 12, 16, 0.549);
-}
-
-
-/*-------------About Page ----------------*/
+/*About Page*/
 #about .introduction {
     border-bottom: thick double #fa0303;;
 }
@@ -281,38 +101,77 @@ footer a:hover {
 ul {
     font-size: 1.2rem;
 }
-/* ------------------all_models--------------*/
-.introduction {
+
+
+
+/*Food Page*/
+#food .introduction {
     border-bottom: thick double #fa0303;;
 }
 
-/*---------------user ----------*/
+#food p,
+ul {
+    font-size: 1.2rem;
+}
 
+
+
+/*Blog Page*/
+#blog-page p {
+    font-size: 1.2rem;
+}
+
+#blog-page .card,
+#user-posts .card {
+    box-shadow: 1px 1px 5px 3px rgb(73, 95, 141);
+}
+
+#blog-page .des-heading,
+#destination-post .des-heading,
+#user-posts .des-heading {
+    background-color: rgba(15, 16, 16, 0.6);
+    color: #f7e23f;
+    line-height: 30px;
+}
+
+#blog-page .card-title,
+#destination-post .card-title,
+#user-posts .card-title {
+    color: black;
+    text-decoration: none;
+}
+
+/*Post and Destination*/
+#destination-post h2 span,
 #user-page h2 span,
 #user-posts h2 span,
 #update-post h2 span,
 #add-post h2 span {
     color: #a00505;
 }
+
+#destinations .card {
+    box-shadow: 1px 1px 5px 3px rgb(245, 196, 196);
+}
+
+#destination-post .card {
+    box-shadow: 1px 1px 3px 2px #b8ebeb;
+}
+
+#destination-post .no-post-msg {
+    height: 200px;
+}
+
 #post-description .post-comment {
     box-shadow: 1px 1px 5px 3px rgb(195, 191, 191);
 }
 
-
-/*----------------Sign in, Sign up, Logout*--------*/
-
-.signupdiv,
-.login-cont {
-    background-color: #a8f8f8;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 2px 2px 15px rgb(95, 61, 244); */
-}
+/*----------------------------------------------Sign in, Sign up, Logout*/
 #signup .container,
 #signin .container,
 #logout .container {
     height: auto;
-    /* box-shadow: 20px 20px 50px 10px #f0eccd inset; */
+    box-shadow: 20px 20px 50px 10px #f0eccd inset;
 }
 
 #signup p,
@@ -322,6 +181,22 @@ ul {
 
 #logout p {
     font-size: 1.4rem;
+}
+
+
+/*--------------------------------------------------------Input Fields*/
+.input-fields input,
+.input-fields select,
+.input-fields textarea {
+    min-width: -webkit-fill-available;
+}
+
+.input-fields select option {
+    padding-left: 5px;
+}
+
+.control-group label {
+    font-size: 23px;
 }
 
 

@@ -21,6 +21,7 @@
                     {% csrf_token %}
                     {{ form | crispy }}
                     {{ post.content | safe }}
+                    {{ post.battery_life | safe }}
                     <button type="submit" class="btn btn-success my-3">Submit</button>
                 </form>
             </div>

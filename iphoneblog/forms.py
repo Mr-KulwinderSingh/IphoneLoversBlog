@@ -13,9 +13,12 @@ class AddPostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = (
-            "title",
-            "content",
-            "featured_image", 
+           "title",
+           "smartphones",
+           "content",
+           "featured_image",
+           "best_feature",
+           "battery_life",
         )
 
         widgets = {
@@ -26,9 +29,25 @@ class AddPostForm(forms.ModelForm):
                     "type": "hidded"
                 }
             ),
-            "content": forms.TextInput(
-                attrs={"class": "form-control"}
-            )
+            "smartphones":  forms.Select(attrs={"class": "form-control"}),
+            "content": SummernoteWidget(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Add your content here",
+                }
+            ),
+            "best_feature": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Add the feature you like",
+                }
+            ),
+            "battery_life": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": " Number of hours in a normal use)",
+                }
+            ),
         }
 
 
@@ -41,15 +60,20 @@ class UpdatePostForm(forms.ModelForm):
         model = Post
         fields = (
                "title",
+               "smartphones",
                "content",
                "featured_image",
-
-        )
+               "best_feature",
+               "battery_life",
+                )
 
     widgets = {
         "title": forms.TextInput(attrs={"class": "form-control"}),
+        "smartphones": forms.Select(attrs={"class": "form-control"}),
         "content": SummernoteWidget(attrs={"class": "form-control"}),
-        }
+        "best_feature": forms.TextInput(attrs={"class": "form-control"}),
+        "battery_life": forms.TextInput(attrs={"class": "form-control"}),
+    }
 
 
 class CommentForm(forms.ModelForm):
