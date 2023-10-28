@@ -61,11 +61,11 @@ body {
     background-color: rgba(0, 12, 16, 0.6);
 }
 
-#destination h2 span {
+#smartphones h2 span {
     color: #f70808;
 }
 
-#destination .card {
+#smartphones .card {
     box-shadow: 1px 1px 5px 3px rgb(245, 196, 196);
 }
 
@@ -126,23 +126,23 @@ ul {
     box-shadow: 1px 1px 5px 3px rgb(73, 95, 141);
 }
 
-#blog-page .des-heading,
-#destination-post .des-heading,
-#user-posts .des-heading {
+#blog-page .sma-heading,
+#smarphone-post .sma-heading,
+#user-posts .sma-heading {
     background-color: rgba(15, 16, 16, 0.6);
     color: #f7e23f;
     line-height: 30px;
 }
 
 #blog-page .card-title,
-#destination-post .card-title,
+#smartphone-post .card-title,
 #user-posts .card-title {
     color: black;
     text-decoration: none;
 }
 
 /*Post and Destination*/
-#destination-post h2 span,
+#smartphone-post h2 span,
 #user-page h2 span,
 #user-posts h2 span,
 #update-post h2 span,
@@ -150,15 +150,15 @@ ul {
     color: #a00505;
 }
 
-#destinations .card {
+#smartphones .card {
     box-shadow: 1px 1px 5px 3px rgb(245, 196, 196);
 }
 
-#destination-post .card {
+#smartphone-post .card {
     box-shadow: 1px 1px 3px 2px #b8ebeb;
 }
 
-#destination-post .no-post-msg {
+#smartphone-post .no-post-msg {
     height: 200px;
 }
 

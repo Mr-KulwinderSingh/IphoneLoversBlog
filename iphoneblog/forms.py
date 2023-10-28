@@ -14,7 +14,7 @@ class AddPostForm(forms.ModelForm):
         model = Post
         fields = (
            "title",
-           "smartphones",
+
            "content",
            "featured_image",
            "best_feature",
@@ -29,7 +29,7 @@ class AddPostForm(forms.ModelForm):
                     "type": "hidded"
                 }
             ),
-            "smartphones":  forms.Select(attrs={"class": "form-control"}),
+           
             "content": SummernoteWidget(
                 attrs={
                     "class": "form-control",
