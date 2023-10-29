@@ -38,9 +38,9 @@ class Author(models.Model):
     def __str__(self):
         return self.user.username
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title, allow_unicode=True)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.slug = slugify(self.title, allow_unicode=True)
+    #     super().save(*args, **kwargs)
 
 
 class Post(models.Model):

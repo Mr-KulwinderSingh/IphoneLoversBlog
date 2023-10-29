@@ -116,7 +116,7 @@ ul {
 
 
 
-/*Blog Page*/
+/*-----------------Blog Page--------------*/
 #blog-page p {
     font-size: 1.2rem;
 }
@@ -127,7 +127,7 @@ ul {
 }
 
 #blog-page .sma-heading,
-#smarphone-post .sma-heading,
+#smartphone-post .sma-heading,
 #user-posts .sma-heading {
     background-color: rgba(15, 16, 16, 0.6);
     color: #f7e23f;
