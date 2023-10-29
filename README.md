@@ -203,11 +203,103 @@ Acceptance Criteria:
 * I can click on the comments symbol to view the conversation.
 
 
-User Story # 
+<!-- User Story # 
 (This one i want to do in the future or if i will manage my time i might add here)
 Search bar (could have) - As a site user I can use a search bar to search for a specific place so that I have quick and easy access to the information I want.
 
 Acceptance Criteria:
 * As a site user, I can easily find and navigate to the search bar.
 * As a site user, I can use the search bar to search by place name.
-* As a site user, I can view the results yielded by my search that I can click from.
+* As a site user, I can view the results yielded by my search that I can click from. -->
+
+
+## Tasks
+
+The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project. Not only the one walkthrough project, even the database management system module  was also helpful to understand and execute the whole plan of making a blog webite. The task is generally the developers step towards preparing the app.
+The tasks that I have followed during the development phase were carried out in this order.
+
+**Before Project Inception**
+
+- Design ERD and Data 
+- Create Repository in GitHub
+- Create Project, Epics, User Stories and prepare (Kanban) Board
+
+**Creation of Project in GitPod**
+
+- Create the django project. Check details in [deployment-section](#deployment)
+- Deploying app to Heroku - Details in [deployment](#deployment) section
+- Create Database Models
+	- Set up models.py file in "blog" directory
+- Build Admin site
+- Set up Templates
+	- Create base.html - Navbar and Footer content, which gets extended to all the other template files
+	- Add responsiveness to navigation and footer
+    - Create index.html, view and style
+	- Set up template file features with views.py and urls.py
+  - about.html (Description about the bloggers and purpose)
+  - blog.html (to view all blog posts)
+  - user_page.html (for user's personal collections)
+  - post_details.html (for detailed post view)
+  - smartphones_post.html (to view blog post for a selected iPhones/ mobile phone)
+  - add_post.html (to allow user's input for blog posts)
+  - delete_post.html (to allow user to delete his post)
+  - update_post.html (to allow user to edit his post)
+  - user_post_list.html (to allow user to view all post, which he posted so far)
+- Install Allauth for sign in, sign up and sign out templates with-  pip3 install django-allauth 
+	- Install crispy-forms to add styles to Django account templates with-  pip3 install crispy-bootstrap5
+- Intensive Manual Testing and Validation checks of each page and codes written
+- Final Deployment steps
+
+-----
+
+[Back to top](#content)
+
+## Design
+
+### Colours
+
+The colour scheme has considered based on easy accessibility for all and have been consistently maintained throughout the website. 
+
+### Typography
+
+Fonts were imported using Google Fonts. Kay Pho Du was used throughout with a backup of sans-serif. The font is very clear and eay to read for users.
+
+### Imagery
+
+All the imagery is related to the iPhone's various models and generations and website design. Some images including carousel are static.
+
+----
+
+## Database Diagram
+
+Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities Post, Author, Destination and Comment are shown in this diagram.
+
+![ER Diagram](assets/erd/)
+
+----
+[Back to top ⇧](#content)
+
+# Features
+
+## Home Page
+
+At the very first glimpse, user can see a Navigation menu with a search button and carousel-images on the homepage. Homepage provides the user with some quick information about the site and make use of all its features. User do not need to be registered to view a blog post. The responsive navigation bar is featured on all pages. 
+
+![Homepage](assets/home-page.jpeg)
+
+----
+
+## Navbar
+
+- The navigation bar is present at the top of every page and navigates all links to the respective pages.
+- The options to Sign Up or Log in will change to the option to log out once a user has logged in.
+- The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes smaller.
+
+![Navbar](assets/features/navbar1.jpeg)
+
+
+## Navbar after loged in user
+
+* If the user is logged in (username Mahi is provided as an example here), navbar will be shown with user name and logout options. On a desktop, the navigation menu will appear as shown below:
+
+![logged-in-user-Navbar](assets/features/navbar.jpeg) 

@@ -102,20 +102,6 @@ ul {
     font-size: 1.2rem;
 }
 
-
-
-/*Food Page*/
-#food .introduction {
-    border-bottom: thick double #fa0303;;
-}
-
-#food p,
-ul {
-    font-size: 1.2rem;
-}
-
-
-
 /*-----------------Blog Page--------------*/
 #blog-page p {
     font-size: 1.2rem;
@@ -171,7 +157,10 @@ ul {
 #signin .container,
 #logout .container {
     height: auto;
-    box-shadow: 20px 20px 50px 10px #f0eccd inset;
+
+/* -----------choice for future to change
+    /* border-radius: 20px;
+    box-shadow: 20px 20px 20px 20px #f0eccd inset; */
 }
 
 #signup p,
@@ -182,7 +171,13 @@ ul {
 #logout p {
     font-size: 1.4rem;
 }
-
+.signupdiv,
+.login-cont {
+    background-color: #a8f8f8;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgb(95, 61, 244); 
+}
 
 /*--------------------------------------------------------Input Fields*/
 .input-fields input,
