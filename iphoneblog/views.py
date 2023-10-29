@@ -49,7 +49,7 @@ class PostDetail(View):
             liked = True
 
         return render(
-            request, 
+            request,
             "post_detail.html",
             {
                 "post": post,
@@ -80,7 +80,7 @@ class PostDetail(View):
             comment_form = CommentForm()
 
         return render(
-            request, 
+            request,
             "post_detail.html",
             {
                 "post": post,
@@ -138,8 +138,8 @@ class UserPostList(LoginRequiredMixin, generic.ListView):
     def get_queryset(self, *args, **kwargs):
         return Post.objects.filter(
             author=self.request.user, status=1).order_by(
-            "-created_on")
-    
+            "-created_on") 
+
 
 @login_required()
 def update_post(request, slug):
@@ -169,7 +169,7 @@ def update_post(request, slug):
     template = ('update_post.html',)
     context = {"form": form, "post": post}
     return render(request, template, context)
- 
+
 
 class DeletePost(DeleteView):
     """

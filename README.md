@@ -473,18 +473,51 @@ In order to properly interact with the website, the user needs to have an accoun
 
 ## Testing
 
+### Performance
+
+#### Google's Lighthouse Performance
+
+##### Desktop Results:
+![Lighthouse Desktop Result](assets/testing/desktopperformance.PNG).
+
+##### Mobile Results:
+![Lighthouse Mobile Result](assets/testing/mobileperformance.PNG).
+
 ### Validation
-I used the following validation tools to validate HTML, CSS, PYTHON codes. Below the link of TESTING.md file, which includes all validation results.  
-- HTML using [W3C HTML validator](https://validator.w3.org/)
-- CSS using [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/)
+I used the following validation tools to validate HTML, CSS, PYTHON codes. 
+
+- HTML using [W3C HTML validator](https://validator.w3.org/) was used to validate the HTML of the website.
+All the Django templates html files hava been manually copying the source of the rendered pages and then validating using the W3C Validator. I found some erros and warning messages but These do not seem to affect the functionality of the website.
+
+  - result for [base.html](assets/testing/base.png)
+  - result for [index.html](assets/testing/home-page.png)
+  - Result for [about page](assets/testing/about.png)
+  - Result for [blog page](assets/testing/blog-page.png)
+  - Result for [post-detail page](assets/testing/post-detail.png)
+  - Result for [smartphones](assets/testing/smartphones.png)
+  - Result for [smartphones post](assets/testing/smartphones-post.png)
+  - Result for [user post list](assets/testing/user-post-list.png)
+  - Result for [user page](assets/testing/user-page.png)
+  - Result for [add-post page](assets/testing/add-post.png)
+  - Result for [update post](assets/testing/update-post.png)
+  - Result for [delete post](assets/testing/delete-post.png)
+
+
+- CSS using [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/) was used for validating the CSS stylesheet. CSS file was tested by manually copying the CSS codes into the manual input option.
+
+  - The result can be seen [here](assets/testing/style.png).
+
 - Python via [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/)
 
+  - Blog
+    * [admin.py](assets/testing/admin.png)
+    * [models.py](assets/testing/models.png)
+    * [forms.py](assets/testing/forms.png)
+    * [urls.py](assets/testing/urls.png)
+    * [views.py](assets/testing/views.png)
+
 ### Manual Testing
-Testing has taken place continuously throughout the development of the project. Each view was tested regularly. When the outcome was not as expected, debugging took place at that point. An exhaustive list of features were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render. All clickable links redirect to the correct pages.
-
-- Link for TESTING.md file:- [Testing Results Here](TESTING.md)
-
-----
+Testing has taken place continuously throughout the development of the project. Each view was tested regularly. When the outcome was not as expected, debugging took place at that point. An exhaustive list of features were checked on different devices and browsers.
 
 ## Bugs
 

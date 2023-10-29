@@ -15,7 +15,7 @@ body {
     background-color: #79f4f6;
 }
 
-/*--------------------------------------------------------Nav bar buttons */
+/*---------------------------Nav bar buttons */
 
 #logo img {
     border-radius: 25px;
@@ -127,7 +127,7 @@ ul {
     text-decoration: none;
 }
 
-/*Post and Destination*/
+/*Post and smartphone*/
 #smartphone-post h2 span,
 #user-page h2 span,
 #user-posts h2 span,
@@ -152,7 +152,7 @@ ul {
     box-shadow: 1px 1px 5px 3px rgb(195, 191, 191);
 }
 
-/*----------------------------------------------Sign in, Sign up, Logout*/
+/*----------------------Sign in, Sign up, Logout*/
 #signup .container,
 #signin .container,
 #logout .container {
@@ -179,7 +179,7 @@ ul {
     box-shadow: 2px 2px 15px rgb(95, 61, 244); 
 }
 
-/*--------------------------------------------------------Input Fields*/
+/*--------------------------------Input Fields*/
 .input-fields input,
 .input-fields select,
 .input-fields textarea {

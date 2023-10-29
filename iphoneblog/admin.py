@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Smartphone, Comment, Author 
+from .models import Post, Smartphone, Comment, Author
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -26,7 +26,7 @@ class SmartphoneAdmin(admin.ModelAdmin):
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     """
-    Add fields for the author in the admin panel 
+    Add fields for the author in the admin panel
     """
 
     list_display = ("user", "email", "created_on", "approved")
@@ -43,4 +43,3 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
-

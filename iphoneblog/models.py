@@ -66,7 +66,6 @@ class Post(models.Model):
         max_length=200, verbose_name="Average battery life")
     smartphones = models.ManyToManyField(Smartphone, blank=True)
 
-
     class Meta:
         ordering = ['-created_on']
 
@@ -95,4 +94,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-

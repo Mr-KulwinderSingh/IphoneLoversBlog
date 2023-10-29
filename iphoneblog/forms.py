@@ -29,7 +29,6 @@ class AddPostForm(forms.ModelForm):
                     "type": "hidded"
                 }
             ),
-           
             "content": SummernoteWidget(
                 attrs={
                     "class": "form-control",
@@ -53,7 +52,7 @@ class AddPostForm(forms.ModelForm):
 
 class UpdatePostForm(forms.ModelForm):
     """
-    This is the form to edit the blog post 
+    This is the form to edit the blog post
     """
 
     class Meta:

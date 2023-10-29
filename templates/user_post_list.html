@@ -2,6 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
+<!------User's Posts List-->
 <section id="user-posts">
     <div class="container">
         <div class="row">
@@ -28,7 +29,7 @@
                                     <div class="image-container">
                                         <!-- The featured image URL or an alternative if one isnt provided -->
                                         {% if "placeholder" in post.featured_image.url %}
-                                        <img class="card-img" src="{% static 'images/.jpg' %}"
+                                        <img class="card-img" src="{% static 'images/logo-image.png' %}"
                                             width="100%">
                                         {% else %}
                                         <img src=" {{ post.featured_image.url }}" class="card-img-top"
@@ -44,7 +45,7 @@
                                 </a>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><strong>Best Feature: </strong> <span>{{post.best_feature}}</span></li>
-                                    <li class="list-group-item"><strong>Ideal Duration: </strong> <span> {{post.battery_life }}</span></li>
+                                    <li class="list-group-item"><strong>Battery Life: </strong> <span> {{post.battery_life }}</span></li>
                                 </ul>
                                 <div class="card-text">
                                     {{ post.content | slice:":280" | safe }}...
@@ -59,7 +60,7 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <!-- if the user have NOT shared any post, the Create New button below will display -->
+                    <!-- if the user have NOT shared any post, the Add one button below will display -->
                     {% else %}
                     <div class="container text-center mt-4">
                         <div class="text-dark">
