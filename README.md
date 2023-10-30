@@ -523,16 +523,14 @@ Testing has taken place continuously throughout the development of the project. 
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
-| In navbar, the menu item destination dropdown was not populating.| Create destination_list view that return context (destination_list) then add `'blog.views.destinations_list'` in templates section in settings.py file |
+| In navbar, the menu item AlliPhones dropdown was not populating.| Create smartphone_list view that return context (smartphone_list) then add `'iphoneblog.views.smartphones_list'` in templates section in settings.py file |
 | Post image was not rendering on post_detail page(Issue only for mobile screens). | Remove class 'd-none' from post_detail page |
-| Alert messages was not disappeare after setTimeOut(2000)<br><details><summary>Alert Code</summary><img src="assets/alert-js.jpg"></details> | Copy code from bootstrap alert and customize with forEach <br><details><summary>New Alert Code</summary><img src="assets/new-alert-js.jpg"></details>|
-| Destination dropdown was again not populating. | Remove script scr 'bootstrap.min.js' because there is already 'bootstrap.bundle.min.js' |
-| Automated test was not working because of postgres database | Connect with local db.sqlite3 while running unit test<br><details><summary>Override database for unit test</summary><img src="assets/local-bd-for-unittest.jpg"></details>  |
+| Alert messages was not disappeare after setTimeOut(2000)<br><details><summary>Alert Code</summary><img src="assets/alert-msg.jpeg"></details> | Copy code from bootstrap alert and customize with forEach <br><details><summary>New Alert Code</summary> tried as shown in the image but no success to fix!
 
 
 | **Unfix Bug** |
 | ----------- | 
-| When a logged in user adds a new post, the post slug should automatically be created from the post title. But the slug field is empty in the database. Slug is a required field when admin publishes a draft post, so here admin manually filled the slug field during publishing. Below is the screenshot from the post model in admin panel and view for Add Post.<br><details><summary>Empty slug screenshot</summary><img src="assets/empty-slug.jpg"></details><details><summary>Add Post View</summary><img src="assets/addPostView.jpg"></details> 
+| When a logged in user adds a new post, the post slug should automatically be created from the post title. But the slug field is empty in the database. Slug is a required field when admin publishes a draft post, so here admin manually filled the slug field during publishing. Below is the screenshot from the post model in admin panel and view for Add Post. 
 
 ----
 
@@ -540,6 +538,8 @@ Testing has taken place continuously throughout the development of the project. 
 
 * Automated testing for views functions 
 * Adding and displaying replies below corresponding comments on our blog
+* Adding the comment count views function
+* Adding another blog for Samasung smartphones
 
 [Back to top ⇧](#content)
 
@@ -655,9 +655,7 @@ In the IDE:
 
 ## Code
 - The basic set up of the website was done by strictly following the steps as described in Code Institue Full Stack Frameworks module - Django walkthrough project `"I Think Therefore I Blog"`.
-- Followed the project of one of my friend who is also a CI student (Roshana Vakeel): https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/blob/main/logs/forms.py 
-- Another project link I found from Linkdin, also CI's student (Laura Mayock): https://github.com/LauraMayock/The-happy-reader
-- [The Newsbox](https://github.com/rashdogg74/newsbox86)- One of the project shared by my cohort facilitator on Slack. 
+
 
 ## Learning Resources
 - Code Institutes Full Stack Framework Module, mainly the 'blog' walkthrough project.
@@ -667,15 +665,10 @@ In the IDE:
 - Other open source to understand and solve following types of error : UnboundedLocalError, MultivalueDictKeyError,  ProgrammingError, InvalidCursorName etc.
 - Youtube videos [The Dumbfounds](https://www.youtube.com/playlist?list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) for automated testing.
 
-## Content and Media
-
-Mostly images and post content are taken from the website https://www.holidify.com/ and https://www.incredible-india.org/. Some images are taken from [Pexels](https://www.pexels.com/).
-
-----
 
 ## Acknowledgement
 
-Special thanks to my mentor Sandeep Aggarwal, My fellow student Roshna, Tutor support and Slack community for their assistance throughout this project.
+Special thanks to my mentor Juliia, My fellow student Amar & Jyoti, Tutor support and Slack community for their assistance throughout this project.
 
 [Back to top](<#content>)
 
