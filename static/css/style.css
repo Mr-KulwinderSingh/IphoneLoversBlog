@@ -14,6 +14,9 @@ body {
     font-weight: 300;
     background-color: #79f4f6;
 }
+.update-post-pg {
+    background-color: #79f4f6;
+}
 
 /*---------------------------Nav bar buttons */
 
@@ -127,7 +130,7 @@ ul {
     text-decoration: none;
 }
 
-/*Post and smartphone*/
+/*--------Post and smartphone-------*/
 #smartphone-post h2 span,
 #user-page h2 span,
 #user-posts h2 span,
