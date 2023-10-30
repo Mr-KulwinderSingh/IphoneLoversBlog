@@ -295,9 +295,13 @@ All the imagery is related to the iPhone's various models and generations and we
 
 ## Database Diagram
 
-Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities Post, Author, Destination and Comment are shown in this diagram.
+Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities Post, Author, Smartphone and Comment are shown in this diagram. Some images during the preparation and  what steps to follow as well. 
 
-![ER Diagram](assets/erd/)
+![ER Diagram](assets/erd/database-plan.jpg)
+![ER Diagram](assets/erd/main-model.jpg)
+![ER Diagram](assets/erd/sub-models.jpg)
+![ER Diagram](assets/erd/steps.jpg)
+![ER Diagram](assets/erd/check-list.jpg)
 
 ----
 [Back to top ⇧](#content)
