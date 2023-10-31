@@ -4,7 +4,7 @@
 
 **iPhone|Lovers** blog website is developed using Django Framework as part of Portfolio Project 4 for my Diploma in Full Stack Software Development at Code Institute.
 
-It targets the most loving series of the iPhones as worldwide people like iphones as lot, where user can view the blog post of their favourite iPhone model, they can comment about a particular iPhone model even if they are not iPhone lovers but they want to give some sort of feedback about the smartphone what they like, they do a blog post and comments. When the user is logged in, user can like/unlike a post, comment on a post and add a post from the user page.
+It targets the most loving series of the iPhones as worldwide people like iphones a lot, where user can view the blog post of their favourite iPhone model, they can comment about a particular iPhone model even if they are not iPhone lovers but they want to give some sort of feedback about a smartphone what they like, they can do a blog post and comments. When the user is logged in, user can like/unlike a post, comment on a post and add a post from the user page.
 
 You can view the live site here:-  https://iphonelovers-1bcbfe91e39d.herokuapp.com
 
@@ -75,7 +75,7 @@ You can view the live site here:-  https://iphonelovers-1bcbfe91e39d.herokuapp.c
 
 ### Targeted User Goals:
 A user interested in visiting iPhones/smartphones.
-A user who likes/loves iPhone or similar in smartphone.
+A user who likes/loves iPhone or similarly interested in a smartphone.
 A user that wants a platform to share their own feedback.
 
 ### Site User Goals:
@@ -88,7 +88,7 @@ For registered users to be able to like and comment on all posts.
 For registered users to be able add, edit and delete their own comment.
 
 ### Blog Goals:
-Offers a platform about the community who love smartphone and related technology.
+Offers a platform about the community who loves smartphone and related technology.
 Provide registered users the access to like, comment with full CRUD functionality.
 
 
@@ -295,7 +295,7 @@ All the imagery is related to the iPhone's various models and generations and we
 
 ## Database Diagram
 
-Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities Post, Author, Smartphone and Comment are shown in this diagram. Some images during the preparation and  what steps to follow as well. 
+I have used my notebook as learned in the walkthrough project and connect the database relationship on the paper before making it real same was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities Post, Author, Smartphone and Comment are shown in this diagram. Some images during the preparation and  what steps to follow as well. 
 
 ![ER Diagram](assets/erd/database-plan.jpg)
 ![ER Diagram](assets/erd/main-model.jpg)
@@ -310,7 +310,7 @@ Smart Draw was used to create a database schema to visualise the types of custom
 
 ## Home Page
 
-At the very first glimpse, user can see a Navigation menu with a search button and carousel-images on the homepage. Homepage provides the user with some quick information about the site and make use of all its features. User do not need to be registered to view a blog post. The responsive navigation bar is featured on all pages. 
+At the very first glimpse, user can see a Navigation menu with carousel-images on the homepage. Homepage provides the user with some quick information about the site and make use of all of its features. User do not need to be registered to view a blog post. The responsive navigation bar is featured on all pages. 
 
 ![Homepage](assets/features/home-page.jpeg)
 
@@ -353,7 +353,7 @@ At the very first glimpse, user can see a Navigation menu with a search button a
 
 ## About Page
 
-- The About Us Page gives, users information about why we exist and similar interest people can follow us / join us with a brief discription of smartphone/iphones.
+- The About Us Page gives, users information about why we exist, our motive, and similar interest of people can follow us / join us with a brief discription of smartphone/iphones.
 
 ![About Us](assets/features/aboutus.jpeg)
 
@@ -482,10 +482,10 @@ In order to properly interact with the website, the user needs to have an accoun
 #### Google's Lighthouse Performance
 
 ##### Desktop Results:
-![Lighthouse Desktop Result](assets/testing/desktopperformance.PNG).
+![Lighthouse Desktop Result](assets/testing/desktop.png).
 
 ##### Mobile Results:
-![Lighthouse Mobile Result](assets/testing/mobileperformance.PNG).
+![Lighthouse Mobile Result](assets/testing/mobile-perfo.png).
 
 ### Validation
 I used the following validation tools to validate HTML, CSS, PYTHON codes. 
@@ -535,6 +535,7 @@ Testing has taken place continuously throughout the development of the project. 
 | **Unfix Bug** |
 | ----------- | 
 | When a logged in user adds a new post, the post slug should automatically be created from the post title. But the slug field is empty in the database. Slug is a required field when admin publishes a draft post, so here admin manually filled the slug field during publishing. Below is the screenshot from the post model in admin panel and view for Add Post. 
+| In the Blog page when you click on next it shows the posts are overlapping.
 
 ----
 
@@ -544,6 +545,7 @@ Testing has taken place continuously throughout the development of the project. 
 * Adding and displaying replies below corresponding comments on our blog
 * Adding the comment count views function
 * Adding another blog for Samasung smartphones
+* Adding the search bar to find a particular mobile phone (important one)
 
 [Back to top ⇧](#content)
 
