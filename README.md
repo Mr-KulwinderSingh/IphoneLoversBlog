@@ -482,10 +482,10 @@ In order to properly interact with the website, the user needs to have an accoun
 #### Google's Lighthouse Performance
 
 ##### Desktop Results:
-![Lighthouse Desktop Result](assets/testing/desktop.png).
+![Lighthouse Desktop Result](assets/testing/desktop-performance.png).
 
 ##### Mobile Results:
-![Lighthouse Mobile Result](assets/testing/mobile-perfo.png).
+![Lighthouse Mobile Result](assets/testing/mobile-performance.png).
 
 ### Validation
 I used the following validation tools to validate HTML, CSS, PYTHON codes. 

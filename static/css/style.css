@@ -103,6 +103,11 @@ ul {
 }
 
 /*-----------------Blog Page--------------*/
+.card-img-overlay {
+    position: relative;
+
+}
+
 #blog-page p {
     font-size: 1.2rem;
 }
