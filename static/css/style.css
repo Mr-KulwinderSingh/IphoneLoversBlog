@@ -14,9 +14,6 @@ body {
     font-weight: 300;
     background-color: #79f4f6;
 }
-.update-post-pg {
-    background-color: #79f4f6;
-}
 
 /*---------------------------Nav bar buttons */
 
@@ -95,7 +92,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/*About Page*/
+/*--------------About Page--------------------*/
 #about .introduction {
     border-bottom: thick double #fa0303;;
 }
@@ -131,6 +128,11 @@ ul {
 }
 
 /*--------Post and smartphone-------*/
+
+.update-post-pg {
+    background-color: #79f4f6;
+}
+
 #smartphone-post h2 span,
 #user-page h2 span,
 #user-posts h2 span,
