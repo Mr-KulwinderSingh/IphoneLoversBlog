@@ -26,15 +26,16 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "django-insecure-local-dev-key-123456"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-mrkulwinder-iphonelover-89qkxoe1hfj.ws-eu105.gitpod.io', 'iphonelovers-1bcbfe91e39d.herokuapp.com', 'localhost']
-
+ALLOWED_HOSTS = ['8000-mrkulwinder-iphonelover-89qkxoe1hfj.ws-eu105.gitpod.io',"127.0.0.1", "localhost", 'iphonelovers-1bcbfe91e39d.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -81,7 +82,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'iphonelovers.urls'
